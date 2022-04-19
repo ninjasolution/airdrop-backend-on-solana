@@ -1,0 +1,35 @@
+{
+  "name": "airdrop-in-solana",
+  "version": "1.0.0",
+  "description": "Node.js + WEB3.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "jwt",
+    "authentication",
+    "mongodb"
+  ],
+  "type": "module",
+  "author": "bezkoder",
+  "license": "ISC",
+  "dependencies": {
+    "@project-serum/anchor": "^0.18.2",
+    "@solana/spl-token": "^0.1.8",
+    "@solana/web3.js": "^1.39.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bs58": "^5.0.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.15",
+    "read-excel-file": "^5.2.28"
+  }
+}
