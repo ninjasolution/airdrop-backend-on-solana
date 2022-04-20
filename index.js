@@ -1,6 +1,5 @@
 import express from "express";
 import bodyParser from "body-parser";
-import http from "http";
 import cors from "cors";
 import { config } from "dotenv"
 import fileRouter from "./src/routes/file.router.js";
@@ -16,7 +15,7 @@ app.all("*", (req, res) => {
   console.log(req.body)
   res.send("success")
 })
-app.get('/', (req, res) => res.send('Home Page Route'));
+app.get('/api', (req, res) => res.send('Home Page Route'));
 
 var corsOptions = {
   origin: "*"
