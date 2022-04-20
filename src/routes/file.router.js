@@ -13,9 +13,6 @@ export default function (app) {
       
         } else {
       
-          const words = req.file.originalname.split('.');
-          const fileType = words[words.length-1];
-      
           setTimeout(() => {
             fs.rename(`./src/files/${req.file.originalname}`, './src/files/Test.xlsx', function(err) {
               if ( err ) {
@@ -23,6 +20,7 @@ export default function (app) {
               }
             });
           }, 1500);
+          
           return res.send({
             "success": true
           });

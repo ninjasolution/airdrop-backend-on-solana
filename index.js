@@ -9,13 +9,9 @@ config();
 
 const app = express();
 
-
-
 var corsOptions = {
   origin: "*"
 };
-
-
 
 app.use(cors(corsOptions));
 
