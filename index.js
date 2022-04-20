@@ -8,24 +8,28 @@ import airdropRouter from "./src/routes/airdrop.router.js"
 config();
 
 const app = express();
-fileRouter(app);
-airdropRouter(app);
 
-app.all("*", (req, res) => {
-  console.log(req.body)
-  res.send("success")
-})
-app.get('/api', (req, res) => res.send('Home Page Route'));
+
 
 var corsOptions = {
   origin: "*"
 };
+
+
 
 app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.all("*", (req, res) => {
+  return res.send("welcome!")
+})
+app.get('/api', (req, res) => res.send('Home Page Route'));
+
+fileRouter(app);
+airdropRouter(app);
 
 const PORT = process.env.PORT || 3000;
 
