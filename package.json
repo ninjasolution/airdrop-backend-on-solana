@@ -2,9 +2,9 @@
   "name": "airdrop-in-solana",
   "version": "1.0.0",
   "description": "Node.js + WEB3.js",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "node.js",
