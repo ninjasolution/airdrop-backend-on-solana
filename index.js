@@ -2,8 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { config } from "dotenv"
-import fileRouter from "./src/routes/file.router.js";
-import airdropRouter from "./src/routes/airdrop.router.js"
+import airdrop from "./src/apis/airdrop.js";
+import file from "./src/apis/file.js";
 
 config();
 
@@ -25,8 +25,8 @@ app.get("/", (req, res) => {
 
 app.get('/api', (req, res) => res.send('Api is ready'));
 
-fileRouter(app);
-airdropRouter(app);
+app.use("/api/file", file);
+app.use("/api/airdrop", airdrop);
 
 const PORT = process.env.PORT || 3000;
 
