@@ -21,7 +21,7 @@ var corsOptions = {
   origin: "*"
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
