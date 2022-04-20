@@ -19,11 +19,11 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.all("*", (req, res) => {
-//   return res.send("welcome!")
-// })
+app.get("/", (req, res) => {
+  return res.send("welcome!")
+})
 
-app.get('/api', (req, res) => res.send('Home Page Route'));
+app.get('/api', (req, res) => res.send('Api is ready'));
 
 fileRouter(app);
 airdropRouter(app);
