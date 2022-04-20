@@ -28,7 +28,7 @@ app.get('/api', (req, res) => res.send('Api is ready'));
 app.use("/api/file", file);
 app.use("/api/airdrop", airdrop);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
