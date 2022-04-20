@@ -27,18 +27,17 @@ class Service {
       let cluster = 'testnet';
       let url = web3.clusterApiUrl(this.toCluster(cluster), true);
       let connection = new web3.Connection(url, 'processed');
-      let amounts = 0.5;
+
       // please replace secret key
-      let SECRET_KEY = "4273ZFEmhfsXxt7bhwnZ6BUK95wpLWFin17YjxeyHxZdCuHbDaBNtVdFV6kJk8VDcGVSPPDs8NK4jv6ZTqbpoon3";
+      let SECRET_KEY = process.env.SECRET_KEY
       const Uin8bytes = decode(SECRET_KEY)
       const fromWallet = web3.Keypair.fromSecretKey(Uint8Array.from(Uin8bytes));
-      const tokenMintAddress = '9kSH9V8r1Cktu5AaAeS11SN5kDtMiJD36MFpBf8tUE8M';
+      const tokenMintAddress = process.env.TOKEN_ADDRESS;
       
-
       fs.createReadStream('./src/files/Test.csv')
       .pipe(csv())
       .on('data', async (row) => {
-        console.log(row?.address, row?.amount);
+
         const to = new web3.PublicKey(row?.address);
         await this.tokenTransfer(tokenMintAddress, fromWallet, to, connection, row?.amount)
 
@@ -104,7 +103,7 @@ class Service {
       console.log("SIGNATURE", signature);
       console.log("SUCCESS");
 
-      return transaction;
+      return signature;
     }
 }
 
